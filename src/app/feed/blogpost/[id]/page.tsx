@@ -19,7 +19,11 @@ export default async function BlogpostPage({
 }) {
   const id = (await params).id;
   const post = await client.fetch(BLOGPOST_BY_ID_QUERY, { id });
-  const md = MarkdownIt();
+  const md = MarkdownIt({
+    html: true,
+    linkify: true,
+    typographer: true,
+  });
   const parsedContent = md.render(post?.content ?? "");
   // const rawContent = md.render(post?.content ?? "");
   // const parsedContent = DOMPurify.sanitize(rawContent, {

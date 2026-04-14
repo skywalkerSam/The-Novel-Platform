@@ -19,7 +19,11 @@ export default async function BlogpostPage({
 }) {
   const id = (await params).id;
   const post = await client.fetch(BLOGPOST_BY_ID_QUERY, { id });
-  const md = MarkdownIt();
+  const md = MarkdownIt({
+    html: true,
+    linkify: true,
+    typographer: true,
+  });
   const parsedContent = md.render(post?.content ?? "");
   // const rawContent = md.render(post?.content ?? "");
   // const parsedContent = DOMPurify.sanitize(rawContent, {
@@ -86,10 +90,11 @@ export default async function BlogpostPage({
         </div>
       </section>
 
-      <section className="flex items-center justify-center font-paprika">
+      <section className="font-paprika flex items-center justify-center">
         {parsedContent ? (
           <article
-            className="prose max-w-7xl break-all"
+            // className="prose max-w-7xl break-all"
+            className="prose mx-auto max-w-3xl break-all lg:max-w-4xl xl:max-w-5xl m-4"
             dangerouslySetInnerHTML={{ __html: parsedContent }}
           />
         ) : (

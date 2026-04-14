@@ -3,7 +3,7 @@
         <img src="https://github.com/starboy-inc.png" alt="Starboy Logo" height=128>
     </a>
     <h1><a href="https://novel.skywalkersam.dev">The Novel Platform</a></h1>        
-    A Place for Everything Poetic
+    A Place for Everything Poetic.
 </div>
 
 &nbsp;
@@ -61,7 +61,7 @@
 
 &nbsp;
 
-Until Next Time...✌️
+Until next time...✌️
 
 &nbsp;
 
